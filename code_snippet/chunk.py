@@ -12,7 +12,7 @@ client = OpenAI(
 )
 
 EMBED_MODEL = os.getenv("EMBED_MODEL")
-KB_FOLDER = os.getenv("KB_FOLDER")
+DB_FOLDER = os.getenv("KB_FOLDER")
 VECTOR_STORE_FILE = os.getenv("VECTOR_STORE_FILE")
 
 
@@ -32,7 +32,7 @@ def cosine_similarity(A, B):
     return dot_prod / (norm_a * norm_b)
 
 #Load the documents
-def load_documents(folder=KB_FOLDER):
+def load_documents(folder=DB_FOLDER):
     documents = []
     
     for filename in sorted(os.listdir(folder)):
